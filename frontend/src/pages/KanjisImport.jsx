@@ -85,7 +85,8 @@ class KanjisImport extends Component {
             <Wrapper>
                 <Title>Import Kanjis</Title>
 
-                <Label>Paste Japanese Text: </Label>
+                <Label>Paste Japanese Text: <br></br>
+                     Try: 昨日すき焼きを食べました</Label>
                 <InputText
                     type="text"
                     value={character}
