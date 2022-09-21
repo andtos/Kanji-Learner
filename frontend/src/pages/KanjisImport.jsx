@@ -59,9 +59,10 @@ class KanjisImport extends Component {
         
         const { character, meaning, reading } = this.state
         var success = 0
-        for(let x = 0; x < character.length; x++){
-        const substring = character.substring(x,x+1)
-        const payload = { character: substring, meaning , reading  }
+        var parsed = character.replace( /[\u3040-\u30ff]/g, " ")
+        for(let x = 0; x < parsed.length; x++){
+            const substring = parsed.substring(x,x+1)
+            const payload = { character: substring, meaning , reading  }
 
             await api.insertKanji(payload)
             success = 1;
