@@ -58,17 +58,23 @@ class KanjisImport extends Component {
     handleImportKanji = async () => {
         
         const { character, meaning, reading } = this.state
-        
-        const payload = { character, meaning , reading  }
+        var success = 0
+        for(let x = 0; x < character.length; x++){
+        const substring = character.substring(x,x+1)
+        const payload = { character: substring, meaning , reading  }
 
-        await api.insertKanji(payload).then(res => {
-            window.alert(`Kanji imported successfully`)
-            this.setState({
-                character: '',
-                meaning: '',
-                reading: '',
-            })
+            await api.insertKanji(payload)
+            success = 1;
+        }
+    
+        this.setState({
+            character: '',
+            meaning: '',
+            reading: '',
         })
+        if(success === 1){
+            window.alert(`Kanji imported successfully`)
+        }
     }
 
     render() {
