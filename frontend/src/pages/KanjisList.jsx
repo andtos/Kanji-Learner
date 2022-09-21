@@ -79,18 +79,19 @@ class KanjisList extends Component {
 
         const columns = [
             {
-                Header: 'character',
-                accessor: '_id',
+                Header: 'Character',
+                accessor: 'character',
+                filterable: true,
+            },
+            
+            {
+                Header: 'Meaning',
+                accessor: 'meaning',
                 filterable: true,
             },
             {
                 Header: 'Reading',
                 accessor: 'reading',
-                filterable: true,
-            },
-            {
-                Header: 'Meaning',
-                accessor: 'meaning',
                 filterable: true,
             },
             {

@@ -53,14 +53,11 @@ class KanjisInsert extends Component {
     }
 
     handleChangeInputMeaning = async event => {
-        const meaning = event.target.validity.valid
-            ? event.target.value
-            : this.state.meaning
-
+        const meaning = event.target.value
         this.setState({ meaning })
     }
 
-    handleChangeReading = async event => {
+    handleChangeInputReading = async event => {
         const reading = event.target.value
         this.setState({ reading })
     }
@@ -103,7 +100,7 @@ class KanjisInsert extends Component {
                 <InputText
                     type="text"
                     value={reading}
-                    onChange={this.handleChangeReading}
+                    onChange={this.handleChangeInputReading}
                 />
 
                 

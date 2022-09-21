@@ -50,9 +50,9 @@ updateKanji = async (req, res) => {
                 message: 'Kanji not found!',
             })
         }
-        kanji.name = body.name
-        kanji.time = body.time
-        kanji.rating = body.rating
+        kanji.character = body.character
+        kanji.meaning = body.meaning
+        kanji.reading = body.reading
         kanji
             .save()
             .then(() => {
