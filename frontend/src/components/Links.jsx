@@ -33,6 +33,11 @@ class Links extends Component {
                                 Create Kanji
                             </Link>
                         </Item>
+                        <Item>
+                            <Link to="/kanjis/import" className="nav-link">
+                                Import Kanji
+                            </Link>
+                        </Item>
                     </List>
                 </Collapse>
             </React.Fragment>
